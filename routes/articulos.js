@@ -4,7 +4,7 @@ var express = require('express');
 var articuloController = require('../controllers/articulos.js');
 var routes = express.Router();
 var token = require('../helpers/auth');
-var checkAdminRole = require('../helpers/auth').checkAdminRole; // Cambiado aquí
+var checkAdminRole = require('../helpers/auth').checkAdminRole; 
 
 routes.post('/api/articulo', token.validateToken, checkAdminRole, articuloController.createArticulo);		//administrador 
 routes.put('/api/articulo/:_id', token.validateToken, checkAdminRole, articuloController.editArticulo);		//administrador 
